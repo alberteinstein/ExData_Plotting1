@@ -13,7 +13,7 @@ datetime<-paste(powersub$Date,powersub$Time)
 datetime<-strptime(datetime,format="%d/%m/%Y %H:%M:%S")
 
 ## Set the locale for plotting the correct day names
-Sys.setlocale(category="LC_TIME",locale="US")
+Sys.setlocale(category="LC_TIME",locale="en_US")
 
 ## Plot the variable "Global_active_power" over the time and set the labels and the title of the plot
 plot(datetime,powersub$Global_active_power,type="l",xlab="",ylab="Global Active Power (kilowatts)")

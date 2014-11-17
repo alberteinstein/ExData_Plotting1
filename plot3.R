@@ -13,7 +13,7 @@ datetime<-paste(powersub$Date,powersub$Time)
 datetime<-strptime(datetime,format="%d/%m/%Y %H:%M:%S")
 
 ## Set the locale for plotting the correct day names
-Sys.setlocale(category="LC_TIME",locale="US")
+Sys.setlocale(category="LC_TIME",locale="en_US")
 
 
 ## Plot the variable "Global_active_power" over the time and set the labels and the title of the plot
@@ -22,7 +22,7 @@ lines(datetime,powersub$Sub_metering_2,type="l",xlab="",ylab="Energy sub meterin
 lines(datetime,powersub$Sub_metering_3,type="l",xlab="",ylab="Energy sub metering",col="blue")
 
 ## Add the legend
-legend("topright",lty=1,col=c("black","red","blue"),leg.txt)
+legend("topright",lty=1,col=c("black","red","blue"),c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
 
 ## Save this plot as a .png
 dev.copy(png,file="plot3.png",width=480,height=480)
